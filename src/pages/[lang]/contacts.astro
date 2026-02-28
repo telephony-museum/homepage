@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Visit from "../../components/Visit.astro";
+import Footer from "../../components/Footer.astro";
+import { languages, defaultLang } from "../../i18n/index";
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((code) => code !== defaultLang)
+    .map((code) => ({ params: { lang: code } }));
+}
+
+const { lang } = Astro.params;
+const t = languages[lang!];
+const homeHref = `/${lang}/`;
+---
+
+<BaseLayout t={t} pageTitle={t.visit.meta.title} pageDescription={t.visit.meta.description}>
+  <Header t={t} />
+  <main class="pt-32 sm:pt-40 pb-20 sm:pb-32">
+    <div class="max-w-7xl mx-auto px-6 mb-6">
+      <a href={homeHref} class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+        {t.statute.backToHome}
+      </a>
+    </div>
+    <Visit t={t} />
+    <div class="max-w-7xl mx-auto px-6 mt-12 flex flex-wrap gap-4">
+      <a href={`/${lang}/exposition/`} class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors">
+        {t.nav.exposition} &rarr;
+      </a>
+      <a href={`/${lang}/prices/`} class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors">
+        {t.nav.prices} &rarr;
+      </a>
+    </div>
+  </main>
+  <Footer t={t} />
+</BaseLayout>

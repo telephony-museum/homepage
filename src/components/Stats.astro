@@ -1,0 +1,23 @@
+---
+import type { Translation } from "../i18n/types";
+interface Props { t: Translation; }
+const { t } = Astro.props;
+
+const stats = [
+  { value: "1,200+", label: t.stats.artifacts },
+  { value: "118 yrs", label: t.stats.buildingAge },
+  { value: "8", label: t.stats.programs },
+  { value: "15k+", label: t.stats.annualGuests },
+];
+---
+
+<section class="py-16 sm:py-24 bg-white/[0.02]">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+    {stats.map((stat) => (
+      <div class="text-center group cursor-default">
+        <p class="text-3xl sm:text-4xl md:text-5xl font-black text-accent mb-1 group-hover:scale-110 transition-transform">{stat.value}</p>
+        <p class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">{stat.label}</p>
+      </div>
+    ))}
+  </div>
+</section>

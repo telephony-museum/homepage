@@ -1,0 +1,21 @@
+{
+  "name": "Telephony Museum",
+  "short_name": "Telephony",
+  "description": "The History You Can Touch — Telephony Museum in Šiauliai, Lithuania",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#121212",
+  "background_color": "#121212",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

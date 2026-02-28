@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import type { Translation } from "../i18n/types";
+import { defaultLang } from "../i18n/index";
+import heroImage from "../assets/images/telephony-museum-siauliai-building.jpg";
+
+interface Props { t: Translation; }
+const { t } = Astro.props;
+const langPrefix = t.lang === defaultLang ? "" : `/${t.lang}`;
+---
+
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  <div class="absolute inset-0">
+    <Image src={heroImage} alt="Telephony Museum historic building in Šiauliai" width={1800} height={1120} format="webp" quality={80} loading="eager" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/90 to-dark-bg/50"></div>
+  </div>
+
+  <div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 select-none opacity-[0.02] pointer-events-none hidden sm:block">
+    <span class="text-[30vw] font-black uppercase tracking-tighter leading-none">Connect</span>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+    <div class="space-y-6 sm:space-y-8">
+      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+        <span class="text-xs font-bold tracking-widest uppercase text-gray-400">{t.hero.badge}</span>
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.9]">
+        <span class="text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-gray-500">{t.hero.titleLine1}</span><br />
+        <span class="text-accent">{t.hero.titleLine2}</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed font-light">{t.hero.description}</p>
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a href={`${langPrefix}/exposition/`} class="bg-white text-dark-bg px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-3 group hover:bg-accent transition-all text-sm sm:text-base">
+          <span>{t.hero.cta}</span>
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
+        <a href={`${langPrefix}/contacts/`} class="border border-white/20 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold hover:bg-white/5 transition-all text-center text-sm sm:text-base">{t.hero.ctaSecondary}</a>
+      </div>
+    </div>
+
+    <div class="relative hidden md:block">
+      <div class="aspect-square relative rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-700">
+        <Image src={heroImage} alt="Telephony Museum building" width={800} height={800} format="webp" quality={80} loading="eager" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+      </div>
+      <div class="absolute -bottom-6 -left-6 bg-dark-card p-6 rounded-2xl border border-white/10 shadow-xl hidden lg:block">
+        <div class="flex items-center gap-4">
+          <div class="bg-accent/20 p-3 rounded-xl">
+            <svg class="text-accent w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+          </div>
+          <div>
+            <p class="text-2xl font-bold">1,200+</p>
+            <p class="text-xs text-gray-400 uppercase tracking-widest">{t.stats.artifacts}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://telephony.museum/sitemap-index.xml

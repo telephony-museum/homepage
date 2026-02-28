@@ -1,0 +1,60 @@
+---
+import type { Translation } from "../i18n/types";
+import { siteConfig } from "../data/site";
+
+interface Props { t: Translation; }
+const { t } = Astro.props;
+---
+
+<section id="visit" class="bg-dark-bg border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-8 lg:gap-16">
+    <div class="lg:col-span-5 space-y-8 sm:space-y-10">
+      <div>
+        <h2 class="text-3xl sm:text-5xl font-black mb-4 uppercase tracking-tighter">{t.visit.title}</h2>
+        <p class="text-gray-400">{t.visit.subtitle}</p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div class="bg-accent/10 p-3 rounded-lg text-accent shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          </div>
+          <div>
+            <h5 class="font-bold mb-1">{t.visit.addressLabel}</h5>
+            <p class="text-gray-400 text-sm">{siteConfig.address}</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="bg-accent/10 p-3 rounded-lg text-accent shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <div>
+            <h5 class="font-bold mb-1">{t.visit.hoursLabel}</h5>
+            <p class="text-gray-400 text-sm">{t.visit.hoursText}</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="bg-accent/10 p-3 rounded-lg text-accent shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          </div>
+          <div>
+            <h5 class="font-bold mb-1">{t.visit.contactLabel}</h5>
+            <p class="text-gray-400 text-sm"><a href={`mailto:${siteConfig.email}`} class="hover:text-accent transition-colors">{siteConfig.email}</a></p>
+            <p class="text-gray-400 text-sm"><a href={`tel:${siteConfig.phone}`} class="hover:text-accent transition-colors">{siteConfig.phoneDisplay}</a></p>
+          </div>
+        </div>
+      </div>
+
+      <a href={`mailto:${siteConfig.email}?subject=Group Visit Enquiry`} class="block w-full bg-white text-dark-bg py-4 rounded-xl font-bold hover:bg-accent transition-colors uppercase tracking-widest text-sm text-center">
+        {t.visit.ctaButton}
+      </a>
+    </div>
+
+    <div class="lg:col-span-7 h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden grayscale contrast-125 border border-white/10 relative">
+      <div class="absolute inset-0 bg-accent/10 mix-blend-overlay z-10 pointer-events-none"></div>
+      <iframe src={siteConfig.mapEmbedUrl} width="100%" height="100%" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Telephony Museum location on Google Maps"></iframe>
+    </div>
+  </div>
+</section>

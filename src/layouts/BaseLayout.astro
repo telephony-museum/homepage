@@ -1,0 +1,160 @@
+---
+import type { Translation } from "../i18n/types";
+import { siteConfig } from "../data/site";
+import { langCodes, defaultLang } from "../i18n/index";
+import "../styles/global.css";
+
+interface Props {
+  t: Translation;
+  pageTitle?: string;
+  pageDescription?: string;
+}
+
+const { t, pageTitle, pageDescription } = Astro.props;
+const title = pageTitle ?? t.meta.title;
+const description = pageDescription ?? t.meta.description;
+const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
+
+// Derive the page slug from the pathname (e.g., "/lt/exposition/" → "exposition/")
+const pathParts = Astro.url.pathname.replace(/^\//, "").split("/");
+const pagePath = pathParts[0] && langCodes.includes(pathParts[0])
+  ? pathParts.slice(1).join("/")
+  : pathParts.join("/");
+
+const ogLocaleMap: Record<string, string> = {
+  en: "en_GB",
+  lt: "lt_LT",
+  lv: "lv_LV",
+  pl: "pl_PL",
+  ru: "ru_RU",
+  de: "de_DE",
+  et: "et_EE",
+  es: "es_ES",
+  uk: "uk_UA",
+};
+const currentLocale = ogLocaleMap[t.lang] || t.lang;
+const alternateLocales = Object.entries(ogLocaleMap)
+  .filter(([code]) => code !== t.lang)
+  .map(([, locale]) => locale);
+---
+
+<!doctype html>
+<html lang={t.lang} dir={t.dir} class="bg-dark-bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#121212" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="author" content={siteConfig.name} />
+
+    <!-- hreflang alternates -->
+    {langCodes.map((code) => {
+      const prefix = code === defaultLang ? "" : `/${code}`;
+      const suffix = pagePath ? `/${pagePath}` : "/";
+      return (
+        <link
+          rel="alternate"
+          hreflang={code}
+          href={`${siteConfig.url}${prefix}${suffix}`}
+        />
+      );
+    })}
+    <link rel="alternate" hreflang="x-default" href={`${siteConfig.url}/${pagePath}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteConfig.url}/og-image.jpg`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content={description} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content={currentLocale} />
+    {alternateLocales.map((locale) => (
+      <meta property="og:locale:alternate" content={locale} />
+    ))}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteConfig.url}/og-image.jpg`} />
+    <meta name="twitter:image:alt" content={description} />
+
+    <!-- Geo -->
+    <meta name="geo.region" content="LT" />
+    <meta name="geo.placename" content="Šiauliai" />
+    <meta name="geo.position" content={`${siteConfig.coordinates.lat};${siteConfig.coordinates.lng}`} />
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Museum",
+      "@id": `${siteConfig.url}/#museum`,
+      name: siteConfig.name,
+      alternateName: ["Telefonijos Muziejus", "Telefonijas muzejs", "Muzeum Telefonii", "Музей телефонии", "Telephonie Museum", "Telefonimuuseum", "Museo de Telefonía", "Музей телефонії"],
+      description: t.meta.description,
+      url: siteConfig.url,
+      image: `${siteConfig.url}/og-image.jpg`,
+      telephone: siteConfig.phone,
+      email: siteConfig.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Dvaro g. 85-5",
+        addressLocality: "Šiauliai",
+        postalCode: "76236",
+        addressCountry: "LT",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: siteConfig.coordinates.lat,
+        longitude: siteConfig.coordinates.lng,
+      },
+      hasMap: siteConfig.mapEmbedUrl,
+      foundingDate: String(siteConfig.founded),
+      founder: { "@type": "Organization", name: "DIDWW" },
+      sameAs: [siteConfig.facebook],
+      isAccessibleForFree: false,
+      publicAccess: true,
+      inLanguage: t.lang,
+      priceRange: "6-10 EUR",
+      currenciesAccepted: "EUR",
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "17:00",
+      },
+      offers: {
+        "@type": "Offer",
+        price: "6",
+        priceCurrency: "EUR",
+        url: `${siteConfig.url}/prices/`,
+        description: "Museum admission from 6 EUR",
+      },
+      hasPart: [
+        { "@type": "ExhibitionEvent", name: "Exposition", url: `${siteConfig.url}/exposition/` },
+        { "@type": "EducationEvent", name: "Educational Programs", url: `${siteConfig.url}/education/` },
+      ],
+    })} />
+  </head>
+  <body class="min-h-screen bg-dark-bg text-gray-100 font-sans antialiased">
+    <slot />
+  </body>
+</html>

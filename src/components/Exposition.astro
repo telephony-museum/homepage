@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import type { Translation } from "../i18n/types";
+import { exhibits, categories } from "../data/exhibits";
+
+import vintageBell from "../assets/images/vintage-bell-era-telephone.jpg";
+import switchboard from "../assets/images/manual-switchboard-exchange.jpg";
+import mobileRevolution from "../assets/images/motorola-mobile-phone-revolution.jpg";
+import cloudTelephony from "../assets/images/cloud-telephony-voip-exhibit.jpg";
+
+interface Props { t: Translation; }
+const { t } = Astro.props;
+
+const imageMap: Record<string, ImageMetadata> = {
+  "vintage-bell": vintageBell, "switchboard": switchboard, "mobile-revolution": mobileRevolution, "cloud-telephony": cloudTelephony,
+};
+
+const catLabels = t.exposition.categories;
+---
+
+<section id="exposition" class="max-w-7xl mx-auto px-6">
+  <div class="mb-10 sm:mb-16 max-w-3xl">
+    <h3 class="text-sm font-bold uppercase tracking-[0.3em] text-accent mb-4">{t.exposition.label}</h3>
+    <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tight mb-3">{t.exposition.title}</h2>
+    <p class="text-lg text-accent/80 font-medium italic mb-6">{t.exposition.subtitle}</p>
+    <p class="text-sm sm:text-base text-gray-400 leading-relaxed">{t.exposition.description}</p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8" id="exhibit-grid">
+    {exhibits.map((exhibit, idx) => (
+      <div data-category={exhibit.category} class="group relative overflow-hidden rounded-2xl bg-dark-card border border-white/5 hover:border-accent/50 transition-all duration-500">
+        <div class="aspect-[4/5] overflow-hidden">
+          <Image src={imageMap[exhibit.image]} alt={t.exposition.exhibits[idx].title} width={600} height={750} format="webp" quality={80} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent" />
+        </div>
+        <div class="absolute bottom-0 p-4 sm:p-6 w-full">
+          <h4 class="text-base sm:text-xl font-bold drop-shadow-lg">{t.exposition.exhibits[idx].title}</h4>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

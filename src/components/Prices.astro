@@ -1,0 +1,44 @@
+---
+import type { Translation } from "../i18n/types";
+
+interface Props { t: Translation; }
+const { t } = Astro.props;
+---
+
+<section id="prices" class="bg-dark-surface py-12 sm:py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+      <h3 class="text-sm font-bold uppercase tracking-[0.3em] text-accent mb-4">{t.prices.label}</h3>
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-black mb-4 sm:mb-6">{t.prices.title}</h2>
+      <p class="text-gray-400">{t.prices.description}</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto mb-10 sm:mb-16">
+      {t.prices.tickets.map((ticket) => (
+        <div class="bg-dark-bg border border-white/5 rounded-2xl p-4 sm:p-6 md:p-8 text-center hover:border-accent/30 transition-all group">
+          <p class="text-[10px] sm:text-sm text-gray-400 uppercase tracking-widest font-bold mb-2 sm:mb-4">{ticket.type}</p>
+          <div class="mb-2 sm:mb-4">
+            <span class="text-3xl sm:text-4xl md:text-5xl font-black text-accent group-hover:scale-110 inline-block transition-transform">{ticket.price}</span>
+            <span class="text-sm sm:text-lg text-gray-500 ml-1">EUR</span>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">{ticket.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-dark-bg/50 border border-white/5 rounded-2xl p-6 sm:p-8 text-center">
+        <h4 class="font-bold mb-4 text-lg">{t.prices.freeTitle}</h4>
+        <ul class="space-y-2">
+          {t.prices.freeItems.map((item) => (
+            <li class="text-sm text-gray-400 flex items-center justify-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p class="text-xs text-gray-500 mt-6">{t.prices.paymentNote}</p>
+      </div>
+    </div>
+  </div>
+</section>

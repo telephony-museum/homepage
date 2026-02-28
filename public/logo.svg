@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <style>
+    .stroke {
+      fill: none;
+      stroke: #c18b5c;
+      stroke-width: 16;
+    }
+    .fill {
+      fill: #c18b5c;
+    }
+    .text {
+      fill: #c18b5c;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 58px;
+      font-weight: 700;
+      letter-spacing: 16px;
+      dominant-baseline: central;
+    }
+  </style>
+
+  <circle cx="300" cy="300" r="270" class="stroke"/>
+
+  <circle cx="300" cy="300" r="110" class="stroke"/>
+
+  <circle cx="85" cy="300" r="12" class="fill"/>
+  <circle cx="515" cy="300" r="12" class="fill"/>
+
+  <defs>
+    <path id="topArc" d="M 110 300 A 190 190 0 0 1 490 300" fill="none"/>
+    <path id="bottomArc" d="M 110 300 A 190 190 0 0 0 490 300" fill="none"/>
+  </defs>
+
+  <text class="text">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">MUSEUM</textPath>
+  </text>
+
+  <text class="text">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">MUZIEJUS</textPath>
+  </text>
+
+  <path class="fill"
+        transform="translate(300, 300) scale(5.5) rotate(-90) translate(-12, -12)"
+        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+
+</svg>

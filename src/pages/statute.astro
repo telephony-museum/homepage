@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { en } from "../i18n/en";
+
+const t = en;
+---
+
+<BaseLayout t={t} pageTitle={t.statute.meta.title} pageDescription={t.statute.meta.description}>
+  <Header t={t} />
+  <main class="pt-32 sm:pt-40 pb-20 sm:pb-32">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="mb-10 sm:mb-14">
+        <a href="/" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-accent transition-colors mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+          {t.statute.backToHome}
+        </a>
+        <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-4">{t.statute.heading}</h1>
+        <a
+          href="/documents/VSI-Telefonijos-muziejus-istatai.pdf"
+          target="_blank"
+          class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+          {t.statute.downloadPdf}
+        </a>
+      </div>
+
+      <div class="space-y-10 sm:space-y-14">
+        {t.statute.sections.map((section) => (
+          <section>
+            <h2 class="text-lg sm:text-xl font-bold text-accent uppercase tracking-wide mb-6">{section.title}</h2>
+            <div class="space-y-4">
+              {section.articles.map((article) => (
+                <p class="text-gray-300 leading-relaxed text-sm sm:text-base">{article}</p>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer t={t} />
+</BaseLayout>

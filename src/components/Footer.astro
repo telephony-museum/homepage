@@ -1,0 +1,82 @@
+---
+import type { Translation } from "../i18n/types";
+import { siteConfig } from "../data/site";
+import { defaultLang } from "../i18n/index";
+
+interface Props { t: Translation; }
+const { t } = Astro.props;
+const statuteHref = t.lang === defaultLang ? "/statute/" : `/${t.lang}/statute/`;
+const paramaHref = t.lang === defaultLang ? "/parama/" : `/${t.lang}/parama/`;
+
+const langPrefix = t.lang === defaultLang ? "" : `/${t.lang}`;
+const navLinks = [
+  { name: t.nav.exposition, href: `${langPrefix}/exposition/` },
+  { name: t.nav.education, href: `${langPrefix}/education/` },
+  { name: t.nav.prices, href: `${langPrefix}/prices/` },
+  { name: t.nav.visit, href: `${langPrefix}/contacts/` },
+];
+---
+
+<footer class="py-12 sm:py-20 bg-dark-footer border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-10 sm:mb-16">
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-6 sm:mb-8">
+          <img src="/logo.svg" alt="Telephony Museum" width="48" height="48" class="w-11 h-11 sm:w-12 sm:h-12" />
+          <span class="text-xl sm:text-2xl font-black uppercase tracking-tighter">Telephony Museum</span>
+        </div>
+        <p class="text-gray-500 max-w-sm mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">{t.footer.description}</p>
+        <div class="flex gap-4">
+          <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all" aria-label="Facebook">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h6 class="font-bold uppercase tracking-widest text-xs mb-4 sm:mb-8 text-white">{t.footer.navTitle}</h6>
+        <ul class="space-y-3 sm:space-y-4 text-sm text-gray-500">
+          {navLinks.map((link) => (
+            <li><a href={link.href} class="hover:text-accent transition-colors">{link.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h6 class="font-bold uppercase tracking-widest text-xs mb-4 sm:mb-8 text-white">{t.footer.supportTitle}</h6>
+        <ul class="space-y-3 sm:space-y-4 text-sm text-gray-500">
+          <li><a href={`mailto:${siteConfig.email}?subject=Volunteer`} class="hover:text-accent transition-colors">{t.footer.volunteer}</a></li>
+          <li><a href={`mailto:${siteConfig.email}?subject=Donate Exhibits`} class="hover:text-accent transition-colors">{t.footer.donateExhibits}</a></li>
+          <li><a href={`mailto:${siteConfig.email}?subject=Sponsorship`} class="hover:text-accent transition-colors">{t.footer.sponsorship}</a></li>
+          <li><a href={paramaHref} class="hover:text-accent transition-colors">{t.nav.supportUs}</a></li>
+          <li><a href={statuteHref} class="hover:text-accent transition-colors">{t.footer.statute}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-white/5 mb-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-gray-500">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-gray-600 font-bold mb-1">{t.footer.entityCodeLabel}</p>
+          <p>{t.footer.entityCode}</p>
+        </div>
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-gray-600 font-bold mb-1">{t.footer.bankAccountLabel}</p>
+          <p>{t.footer.bankAccount}</p>
+        </div>
+        <div class="col-span-2 sm:col-span-2">
+          <p class="text-[10px] uppercase tracking-widest text-gray-600 font-bold mb-1">{t.footer.bankName}</p>
+          <p>{siteConfig.address}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-gray-600 font-bold gap-4">
+      <p>&copy; {new Date().getFullYear()} {t.footer.copyright}</p>
+      <div class="flex gap-8">
+        <a href={`mailto:${siteConfig.email}`} class="hover:text-accent transition-colors">{t.footer.contact}</a>
+        <a href={statuteHref} class="hover:text-accent transition-colors">{t.footer.statute}</a>
+      </div>
+    </div>
+  </div>
+</footer>
