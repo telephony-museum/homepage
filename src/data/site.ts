@@ -11,6 +11,7 @@ export const siteConfig = {
   address: "Dvaro g. 85-5, Šiauliai 76236, Lithuania",
   addressShort: "Dvaro g. 85, Šiauliai",
   facebook: "https://www.facebook.com/telephonymuseum",
+  github: "https://github.com/telephony-museum/homepage",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.8568216644458!2d23.312833215911937!3d55.934519985429546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e5e31e8613155d%3A0x4571b6cb726c76ba!2sDvaro+g.+85%2C+%C5%A0iauliai+76236!5e0!3m2!1sen!2slt",
   coordinates: { lat: 55.93452, lng: 23.312833 },
