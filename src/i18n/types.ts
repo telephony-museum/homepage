@@ -157,8 +157,9 @@ export interface Translation {
   };
 
   // Public appeal regarding the announced sale of the museum.
-  // Optional: locales without it fall back to English.
-  appeal?: {
+  // Required: every locale carries its own copy, so nothing silently falls
+  // back to English inside a page declaring another lang.
+  appeal: {
     kicker: string;
     heading: string;
     lead: string;

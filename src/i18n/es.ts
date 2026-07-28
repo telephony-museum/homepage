@@ -398,4 +398,62 @@ export const es: Translation = {
       },
     ],
   },
+
+  appeal: {
+    kicker: "La colección fue donada. Ahora se anuncia su venta.",
+    heading: "Estos teléfonos los donamos nosotros.",
+    lead: "Quienes trabajaban en DIDWW trajeron sus propios teléfonos, y los de sus padres, porque les importaba la historia de este sector. Vecinos y habitantes de Šiauliai trajeron los suyos. En siete años se formó un museo — sostenido por una institución pública, abierto a todos. El 27 de julio de 2026 se ofreció a compradores comerciales como „unikalią ir privačią eksponatų kolekciją“: una colección de piezas única y privada.",
+    facts: [
+      {
+        label: "Qué se ofrece",
+        text: "Más de 820 piezas, junto con la propia institución, difundidas a compradores comerciales — descritas en el documento del propio vendedor como una colección privada.",
+        cite: "Pardavimo pasiūlymas, VšĮ „Telefonijos muziejus“ blankas, 2026-07-27 · publicado íntegramente más abajo",
+      },
+      {
+        label: "Lo que ha aportado el propietario: un euro",
+        text: "El balance presentado por la institución para 2025 consigna el capital de los partícipes — todo lo que su propietario ha aportado — como 1 €. En caso de liquidación, su propietario no podría recuperar más que esa cantidad.",
+        cite: "Finansinės būklės ataskaita, 2025 m., pateikta Juridinių asmenų registrui 2026-04-23 · Viešųjų įstaigų įstatymas Nr. I-1428, 24 str. 2 d. ir 27 str. 8 d.",
+      },
+    ],
+    journalistTitle: "Pedimos a los periodistas que lo examinen",
+    journalistCall: "Los documentos son públicos y gratuitos. Las cuentas anuales de la institución, y la memoria en la que debe constar todo lo recibido como donación, las publica el Registro de Personas Jurídicas con el código de entidad 305196456. Pedimos a los periodistas que las obtengan y publiquen lo que dicen — incluido todo aquello que nos contradiga.",
+    moralCore: "No acusamos a nadie de nada y no extraemos ninguna conclusión. Planteamos una sola pregunta. Estos teléfonos se entregaron para que una ciudad tuviera un museo. Antes de que cambien de manos, quienes los entregaron tienen derecho a saber qué se vende y a quién.",
+    demandsTitle: "Lo que pedimos",
+    demands: [
+      "Publicar la memoria de las cuentas anuales, en la que debe constar todo lo que el museo recibió como donación.",
+      "Decir qué se vende realmente — los derechos sobre la institución o las piezas mismas — y a dónde iría el dinero.",
+      "Mantener la colección unida, en Šiauliai y abierta al público.",
+    ],
+    askTitle: "Si esta institución ya no puede conservarla",
+    ask: "entonces la colección debería pasar a un museo público o a la ciudad — en las mismas condiciones en que fue donada.",
+    addressTo: "Escriba a los organismos que tienen potestad para actuar:",
+    recipients: [
+      {
+        name: "Ministerio de Cultura de la República de Lituania",
+        detail: "Supervisa la protección y la conservación de los bienes museísticos en museos de cualquier forma jurídica",
+        href: "https://lrkm.lrv.lt",
+      },
+      {
+        name: "Departamento de Patrimonio Cultural",
+        detail: "Puede inscribir un objeto amenazado en el Registro de Bienes Culturales sin el consentimiento del propietario",
+        href: "https://kpd.lrv.lt",
+      },
+      {
+        name: "Inspección Estatal de Impuestos (VMI)",
+        detail: "Supervisa cómo se reciben y se emplean las donaciones",
+        href: "https://www.vmi.lt",
+      },
+      {
+        name: "Municipio de la ciudad de Šiauliai",
+        detail: "Financia los programas escolares y es la autoridad de patrimonio del edificio del tesoro de 1907",
+        href: "https://www.siauliai.lt",
+      },
+    ],
+    prospectusCta: "Leer la oferta de venta",
+    statuteCta: "Leer los estatutos del museo",
+    dismiss: "Continuar al sitio",
+    barText: "Se anuncia la venta de 820 piezas donadas.",
+    barCta: "Qué está pasando",
+    sourceNote: "Las afirmaciones sobre la venta proceden de la oferta de venta fechada el 27 de julio de 2026, emitida en papel con membrete de VšĮ „Telefonijos muziejus“ y publicada aquí íntegramente. En ella se indica a Lina Zaboras como contacto para consultas de venta; no indica por decisión de quién se ofrece la institución, y no afirmamos que la haya tomado ninguna persona concreta. La cifra de 1 € proviene de las propias cuentas anuales de 2025 de la institución, presentadas el 23 de abril de 2026 con el código de entidad 305196456. Que las piezas fueron donadas es el testimonio de quienes las entregaron. No alegamos ninguna ilegalidad, no formulamos ninguna afirmación sobre los motivos de nadie y corregiremos cualquier cosa que se demuestre errónea.",
+  },
 };

@@ -398,4 +398,62 @@ export const et: Translation = {
       },
     ],
   },
+
+  appeal: {
+    kicker: "Kogu kingiti. Nüüd kuulutatakse see müügiks.",
+    heading: "Need telefonid kinkisime meie.",
+    lead: "Inimesed, kes töötasid DIDWW-s, tõid oma telefonid ja oma vanemate telefonid, sest neile läks korda selle valdkonna ajalugu. Naabrid ja Šiauliai elanikud tõid enda omad. Seitsme aastaga kasvas sellest muuseum — avaliku asutuse hoitud, avatud kõigile. 27. juulil 2026 pakuti seda ärilistele ostjatele kui „unikalią ir privačią eksponatų kolekciją“ — ainulaadne ja eraviisiline eksponaatide kogu.",
+    facts: [
+      {
+        label: "Mida pakutakse",
+        text: "Rohkem kui 820 eksponaati koos asutuse endaga, levitatud ärilistele ostjatele — müüja enda dokumendis nimetatud eraviisiliseks koguks.",
+        cite: "Pardavimo pasiūlymas, VšĮ „Telefonijos muziejus“ blankas, 2026-07-27 · avaldatud allpool täismahus",
+      },
+      {
+        label: "Kui palju omanik on sisse pannud: üks euro",
+        text: "Asutuse esitatud 2025. aasta bilansis on osaliste kapital — kõik, mida omanik on sellesse panustanud — märgitud kui 1 €. Likvideerimisel ei saaks omanik rohkem tagasi.",
+        cite: "Finansinės būklės ataskaita, 2025 m., pateikta Juridinių asmenų registrui 2026-04-23 · Viešųjų įstaigų įstatymas Nr. I-1428, 24 str. 2 d. ir 27 str. 8 d.",
+      },
+    ],
+    journalistTitle: "Palume ajakirjanikel seda uurida",
+    journalistCall: "Dokumendid on avalikud ja tasuta. Asutuse majandusaasta aruanded ja lisad, kuhu tuleb kanda kõik annetusena saadu, avaldab Juriidiliste isikute register juriidilise isiku koodi 305196456 all. Palume ajakirjanikel need hankida ja avaldada, mis neis kirjas on — sealhulgas kõik, mis meile vastu räägib.",
+    moralCore: "Me ei süüdista kedagi milleski ega tee mingeid järeldusi. Me esitame ühe küsimuse. Need telefonid anti selleks, et linnal oleks muuseum. Enne kui need omanikku vahetavad, on inimestel, kes need andsid, õigus teada, mida müüakse ja kellele.",
+    demandsTitle: "Mida me palume",
+    demands: [
+      "Avaldada majandusaasta aruande lisad, kuhu tuleb kanda kõik, mida muuseum annetusena sai.",
+      "Öelda, mida tegelikult müüakse — õigusi asutusele või eksponaate endid — ja kuhu raha läheks.",
+      "Hoida kogu koos, Šiauliais ja avalikkusele avatuna.",
+    ],
+    askTitle: "Kui see asutus ei suuda seda enam hoida",
+    ask: "siis peaks kogu minema avalikule muuseumile või linnale — samadel tingimustel, millega see kingiti.",
+    addressTo: "Kirjutage asutustele, kellel on volitused tegutseda:",
+    recipients: [
+      {
+        name: "Leedu Vabariigi kultuuriministeerium",
+        detail: "Jälgib muuseumiväärtuste kaitset ja hoidmist mis tahes õiguslikus vormis muuseumides",
+        href: "https://lrkm.lrv.lt",
+      },
+      {
+        name: "Kultuuripärandi departemang",
+        detail: "Võib kanda ohustatud objekti kultuuriväärtuste registrisse omaniku nõusolekuta",
+        href: "https://kpd.lrv.lt",
+      },
+      {
+        name: "Riiklik maksuinspektsioon (VMI)",
+        detail: "Teostab järelevalvet selle üle, kuidas annetusi saadakse ja kasutatakse",
+        href: "https://www.vmi.lt",
+      },
+      {
+        name: "Šiauliai linnavalitsus",
+        detail: "Rahastab kooliprogramme ja on 1907. aasta riigikassa hoone pärandiamet",
+        href: "https://www.siauliai.lt",
+      },
+    ],
+    prospectusCta: "Loe müügipakkumist",
+    statuteCta: "Loe muuseumi põhikirja",
+    dismiss: "Jätka saidile",
+    barText: "820 kingitud eksponaati kuulutatakse müügiks.",
+    barCta: "Mis toimub",
+    sourceNote: "Väited müügi kohta tuginevad 27. juuli 2026 müügipakkumisele VšĮ „Telefonijos muziejus“ kirjaplangil, mis on siin avaldatud täismahus. Selles on müügipäringute kontaktisikuna märgitud Lina Zaboras; selles ei ole öeldud, kelle otsusel asutust pakutakse, ja me ei väida, et sellise otsuse oleks teinud mõni konkreetne isik. Näitaja 1 € pärineb asutuse enda 2025. aasta aruandest, mis esitati 23. aprillil 2026, juriidilise isiku kood 305196456. See, et eksponaadid kingiti, on nende inimeste tunnistus, kes need andsid. Me ei väida, et seadust oleks rikutud, ei esita ühtegi väidet kellegi motiivide kohta ja parandame kõik, mis osutub valeks.",
+  },
 };

@@ -1,13 +1,11 @@
 ---
 import type { Translation } from "../i18n/types";
-import { en } from "../i18n/en";
 import { defaultLang } from "../i18n/index";
 
 interface Props { t: Translation; }
 const { t } = Astro.props;
 
-// Locales without their own appeal copy fall back to English.
-const a = t.appeal ?? en.appeal!;
+const a = t.appeal;
 const langPrefix = t.lang === defaultLang ? "" : `/${t.lang}`;
 const prospectusHref = "/documents/telefonijos-muziejus-pardavimo-pasiulymas-2026-07-27.pdf";
 ---

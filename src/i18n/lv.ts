@@ -398,4 +398,62 @@ export const lv: Translation = {
       },
     ],
   },
+
+  appeal: {
+    kicker: "Kolekcija tika uzdāvināta. Tagad tā tiek izsludināta pārdošanai.",
+    heading: "Šos tālruņus uzdāvinājām mēs.",
+    lead: "Cilvēki, kas strādāja DIDWW, atnesa savus tālruņus un savu vecāku tālruņus, jo viņiem rūpēja šīs nozares vēsture. Kaimiņi un Šauļu iedzīvotāji atnesa savus. Septiņu gadu laikā no tā izveidojās muzejs — sabiedriskās iestādes turēts, atvērts visiem. 2026. gada 27. jūlijā tas tika piedāvāts komerciāliem pircējiem kā „unikalią ir privačią eksponatų kolekciją“ — unikāla un privāta eksponātu kolekcija.",
+    facts: [
+      {
+        label: "Kas tiek piedāvāts",
+        text: "Vairāk nekā 820 eksponātu kopā ar pašu iestādi, izplatīti komerciāliem pircējiem — paša pārdevēja dokumentā saukti par privātu kolekciju.",
+        cite: "Pardavimo pasiūlymas, VšĮ „Telefonijos muziejus“ blankas, 2026-07-27 · pilnībā publicēts zemāk",
+      },
+      {
+        label: "Cik īpašnieks ir ieguldījis: vienu eiro",
+        text: "Iestādes iesniegtajā 2025. gada bilancē dalībnieku kapitāls — viss, ko īpašnieks tajā ir ieguldījis — norādīts kā 1 €. Likvidācijas gadījumā īpašnieks nevarētu atgūt vairāk.",
+        cite: "Finansinės būklės ataskaita, 2025 m., pateikta Juridinių asmenų registrui 2026-04-23 · Viešųjų įstaigų įstatymas Nr. I-1428, 24 str. 2 d. ir 27 str. 8 d.",
+      },
+    ],
+    journalistTitle: "Mēs lūdzam žurnālistus to izpētīt",
+    journalistCall: "Dokumenti ir publiski un bez maksas. Iestādes gada pārskatus un pielikumu, kurā jāatspoguļo viss saņemtais kā ziedojums, publicē Juridisko personu reģistrs pēc juridiskās personas koda 305196456. Mēs lūdzam žurnālistus tos iegūt un publicēt to, kas tajos rakstīts — tostarp visu, kas ir pretrunā ar mums.",
+    moralCore: "Mēs nevienu ne par ko neapsūdzam un neizdarām nekādus secinājumus. Mēs uzdodam vienu jautājumu. Šie tālruņi tika atdoti, lai pilsētai būtu muzejs. Pirms tie pāriet citās rokās, cilvēkiem, kas tos atdeva, ir tiesības zināt, kas tiek pārdots un kam.",
+    demandsTitle: "Ko mēs lūdzam",
+    demands: [
+      "Publicēt gada pārskatu pielikumus, kuros jāatspoguļo viss, ko muzejs saņēmis kā ziedojumu.",
+      "Norādīt, kas patiesībā tiek pārdots — tiesības uz iestādi vai paši eksponāti — un kur nonāktu nauda.",
+      "Saglabāt kolekciju vienotu, Šauļos un atvērtu sabiedrībai.",
+    ],
+    askTitle: "Ja šī iestāde to vairs nevar uzturēt",
+    ask: "tad kolekcijai vajadzētu pāriet publiskam muzejam vai pilsētai — ar tādiem pašiem noteikumiem, ar kādiem tā tika uzdāvināta.",
+    addressTo: "Rakstiet iestādēm, kurām ir pilnvaras rīkoties:",
+    recipients: [
+      {
+        name: "Lietuvas Republikas Kultūras ministrija",
+        detail: "Uzrauga muzeja vērtību aizsardzību un saglabāšanu jebkuras juridiskās formas muzejos",
+        href: "https://lrkm.lrv.lt",
+      },
+      {
+        name: "Kultūras mantojuma departaments",
+        detail: "Var ierakstīt apdraudētu objektu Kultūras vērtību reģistrā bez īpašnieka piekrišanas",
+        href: "https://kpd.lrv.lt",
+      },
+      {
+        name: "Valsts nodokļu inspekcija (VMI)",
+        detail: "Pārrauga, kā ziedojumi tiek saņemti un izmantoti",
+        href: "https://www.vmi.lt",
+      },
+      {
+        name: "Šauļu pilsētas pašvaldība",
+        detail: "Finansē skolu programmas un ir 1907. gada valsts kases ēkas mantojuma iestāde",
+        href: "https://www.siauliai.lt",
+      },
+    ],
+    prospectusCta: "Lasīt pārdošanas piedāvājumu",
+    statuteCta: "Lasīt muzeja statūtus",
+    dismiss: "Turpināt uz vietni",
+    barText: "820 uzdāvināti eksponāti tiek izsludināti pārdošanai.",
+    barCta: "Kas notiek",
+    sourceNote: "Apgalvojumi par pārdošanu balstās uz 2026. gada 27. jūlija pārdošanas piedāvājumu uz VšĮ „Telefonijos muziejus“ veidlapas, kas šeit publicēts pilnībā. Tajā kā kontaktpersona pārdošanas jautājumos norādīta Lina Zaboras; tajā nav norādīts, pēc kā lēmuma iestāde tiek piedāvāta, un mēs neapgalvojam, ka tādu lēmumu būtu pieņēmusi kāda konkrēta persona. Rādītājs 1 € ņemts no pašas iestādes 2025. gada pārskata, kas iesniegts 2026. gada 23. aprīlī, juridiskās personas kods 305196456. Tas, ka eksponāti tika uzdāvināti, ir to cilvēku liecība, kas tos atdeva. Mēs neapgalvojam, ka būtu pārkāpts likums, neizvirzām nekādus apgalvojumus par kādas personas motīviem un labosim visu, kas izrādīsies nepareizs.",
+  },
 };

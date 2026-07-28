@@ -398,4 +398,62 @@ export const de: Translation = {
       },
     ],
   },
+
+  appeal: {
+    kicker: "Die Sammlung wurde gestiftet. Jetzt wird sie zum Verkauf angeboten.",
+    heading: "Diese Telefone haben wir gestiftet.",
+    lead: "Menschen, die bei DIDWW arbeiteten, brachten ihre eigenen Telefone und die Telefone ihrer Eltern mit, weil ihnen die Geschichte dieser Branche am Herzen lag. Nachbarn und Einwohner von Šiauliai brachten die ihren. In sieben Jahren entstand daraus ein Museum — getragen von einer öffentlichen Einrichtung, offen für alle. Am 27. Juli 2026 wurde es kommerziellen Käufern als „unikalią ir privačią eksponatų kolekciją“ angeboten: als einzigartige und private Exponatensammlung.",
+    facts: [
+      {
+        label: "Was angeboten wird",
+        text: "Mehr als 820 Exponate, zusammen mit der Einrichtung selbst, an kommerzielle Käufer verbreitet — im Dokument des Verkäufers selbst als private Sammlung bezeichnet.",
+        cite: "Pardavimo pasiūlymas, VšĮ „Telefonijos muziejus“ blankas, 2026-07-27 · unten vollständig veröffentlicht",
+      },
+      {
+        label: "Was der Eigentümer eingebracht hat: einen Euro",
+        text: "In der eingereichten Bilanz der Einrichtung für 2025 ist das Kapital der Beteiligten — alles, was ihr Eigentümer in sie eingebracht hat — mit 1 € ausgewiesen. Bei einer Liquidation könnte der Eigentümer nicht mehr als diesen Betrag zurückerhalten.",
+        cite: "Finansinės būklės ataskaita, 2025 m., pateikta Juridinių asmenų registrui 2026-04-23 · Viešųjų įstaigų įstatymas Nr. I-1428, 24 str. 2 d. ir 27 str. 8 d.",
+      },
+    ],
+    journalistTitle: "Wir bitten Journalisten, sich das anzusehen",
+    journalistCall: "Die Dokumente sind öffentlich und kostenlos. Die Jahresabschlüsse der Einrichtung und der Anhang, in dem alles zu erfassen ist, was als Spende eingegangen ist, werden vom Register der juristischen Personen unter der Rechtsträgernummer 305196456 veröffentlicht. Wir bitten Journalisten, sie anzufordern und zu veröffentlichen, was darin steht — auch alles, was uns widerspricht.",
+    moralCore: "Wir beschuldigen niemanden und ziehen keine Schlüsse. Wir stellen eine einzige Frage. Diese Telefone wurden gegeben, damit eine Stadt ein Museum hat. Bevor sie den Besitzer wechseln, haben die Menschen, die sie gegeben haben, ein Recht darauf zu erfahren, was verkauft wird und an wen.",
+    demandsTitle: "Worum wir bitten",
+    demands: [
+      "Den Anhang zum Jahresabschluss veröffentlichen, in dem alles zu erfassen ist, was das Museum als Spende erhalten hat.",
+      "Angeben, was tatsächlich verkauft wird — die Rechte an der Einrichtung oder die Exponate selbst — und wohin das Geld gehen würde.",
+      "Die Sammlung zusammenhalten, in Šiauliai und öffentlich zugänglich.",
+    ],
+    askTitle: "Wenn diese Einrichtung sie nicht mehr halten kann",
+    ask: "dann sollte die Sammlung an ein öffentliches Museum oder an die Stadt übergehen — zu denselben Bedingungen, zu denen sie gegeben wurde.",
+    addressTo: "Wenden Sie sich an die Stellen, die handeln können:",
+    recipients: [
+      {
+        name: "Kulturministerium der Republik Litauen",
+        detail: "Überwacht den Schutz und die Aufbewahrung von Museumsgut in Museen jeder Rechtsform",
+        href: "https://lrkm.lrv.lt",
+      },
+      {
+        name: "Abteilung für Kulturerbe",
+        detail: "Kann ein bedrohtes Objekt ohne Zustimmung des Eigentümers in das Register der Kulturgüter eintragen",
+        href: "https://kpd.lrv.lt",
+      },
+      {
+        name: "Staatliche Steuerinspektion (VMI)",
+        detail: "Beaufsichtigt, wie Spenden empfangen und verwendet werden",
+        href: "https://www.vmi.lt",
+      },
+      {
+        name: "Stadtverwaltung Šiauliai",
+        detail: "Finanziert die Schulprogramme und ist Denkmalbehörde für das Schatzhaus von 1907",
+        href: "https://www.siauliai.lt",
+      },
+    ],
+    prospectusCta: "Verkaufsangebot lesen",
+    statuteCta: "Satzung des Museums lesen",
+    dismiss: "Weiter zur Website",
+    barText: "820 gestiftete Exponate werden zum Verkauf angeboten.",
+    barCta: "Was geschieht",
+    sourceNote: "Die Aussagen zum Verkauf stützen sich auf das Verkaufsangebot vom 27. Juli 2026 auf dem Briefkopf der VšĮ „Telefonijos muziejus“, das hier vollständig veröffentlicht ist. Es nennt Lina Zaboras als Kontakt für Verkaufsanfragen; es gibt nicht an, auf wessen Entscheidung die Einrichtung angeboten wird, und wir behaupten nicht, dass eine bestimmte Person sie getroffen hat. Die Angabe von 1 € stammt aus dem Jahresabschluss der Einrichtung für 2025, eingereicht am 23. April 2026 unter der Rechtsträgernummer 305196456. Dass die Exponate gestiftet wurden, ist die Aussage der Menschen, die sie gegeben haben. Wir behaupten keinen Rechtsverstoß, wir stellen keine Behauptung über die Motive irgendeiner Person auf, und wir werden alles berichtigen, was sich als falsch erweist.",
+  },
 };

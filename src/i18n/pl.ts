@@ -398,4 +398,62 @@ export const pl: Translation = {
       },
     ],
   },
+
+  appeal: {
+    kicker: "Kolekcja została podarowana. Teraz ogłoszono jej sprzedaż.",
+    heading: "Te telefony podarowaliśmy my.",
+    lead: "Ludzie pracujący w DIDWW przynieśli własne telefony i telefony swoich rodziców, bo zależało im na historii tej branży. Sąsiedzi i mieszkańcy Szawli przynieśli swoje. Przez siedem lat powstało z tego muzeum — prowadzone przez instytucję publiczną, otwarte dla wszystkich. 27 lipca 2026 r. zostało zaoferowane nabywcom komercyjnym jako „unikalią ir privačią eksponatų kolekciją“: unikatowa i prywatna kolekcja eksponatów.",
+    facts: [
+      {
+        label: "Co jest oferowane",
+        text: "Ponad 820 eksponatów wraz z samą instytucją, rozesłane do nabywców komercyjnych — w dokumencie samego sprzedającego nazwane kolekcją prywatną.",
+        cite: "Pardavimo pasiūlymas, VšĮ „Telefonijos muziejus“ blankas, 2026-07-27 · opublikowany poniżej w całości",
+      },
+      {
+        label: "Ile wniósł właściciel: jedno euro",
+        text: "W złożonym przez instytucję bilansie za 2025 r. kapitał uczestników — wszystko, co właściciel do niej wniósł — wykazano jako 1 €. W razie likwidacji właściciel nie mógłby odzyskać więcej.",
+        cite: "Finansinės būklės ataskaita, 2025 m., pateikta Juridinių asmenų registrui 2026-04-23 · Viešųjų įstaigų įstatymas Nr. I-1428, 24 str. 2 d. ir 27 str. 8 d.",
+      },
+    ],
+    journalistTitle: "Prosimy dziennikarzy, aby to sprawdzili",
+    journalistCall: "Dokumenty są publiczne i bezpłatne. Roczne sprawozdania finansowe instytucji oraz informację dodatkową, w której musi być ujęte wszystko, co otrzymano jako darowiznę, publikuje Rejestr Osób Prawnych pod numerem podmiotu 305196456. Prosimy dziennikarzy, aby je uzyskali i opublikowali to, co z nich wynika — w tym wszystko, co nam przeczy.",
+    moralCore: "Nikogo o nic nie oskarżamy i nie wyciągamy żadnych wniosków. Zadajemy jedno pytanie. Te telefony zostały oddane, aby miasto miało muzeum. Zanim zmienią właściciela, ludzie, którzy je oddali, mają prawo wiedzieć, co jest sprzedawane i komu.",
+    demandsTitle: "O co prosimy",
+    demands: [
+      "Opublikować informację dodatkową do rocznego sprawozdania finansowego, w której musi być ujęte wszystko, co muzeum otrzymało jako darowiznę.",
+      "Powiedzieć, co faktycznie jest sprzedawane — prawa do instytucji czy same eksponaty — i gdzie trafiłyby pieniądze.",
+      "Zachować kolekcję w całości, w Szawlach i otwartą dla publiczności.",
+    ],
+    askTitle: "Jeśli ta instytucja nie może jej dłużej utrzymać",
+    ask: "wówczas kolekcja powinna przejść do muzeum publicznego lub do miasta — na tych samych warunkach, na jakich została podarowana.",
+    addressTo: "Napisz do organów, które mają moc działania:",
+    recipients: [
+      {
+        name: "Ministerstwo Kultury Republiki Litewskiej",
+        detail: "Nadzoruje ochronę i przechowywanie dóbr muzealnych w muzeach o każdej formie prawnej",
+        href: "https://lrkm.lrv.lt",
+      },
+      {
+        name: "Departament Dziedzictwa Kulturowego",
+        detail: "Może wpisać zagrożony obiekt do Rejestru Dóbr Kultury bez zgody właściciela",
+        href: "https://kpd.lrv.lt",
+      },
+      {
+        name: "Państwowa Inspekcja Podatkowa (VMI)",
+        detail: "Nadzoruje, w jaki sposób darowizny są otrzymywane i wykorzystywane",
+        href: "https://www.vmi.lt",
+      },
+      {
+        name: "Samorząd miasta Szawle",
+        detail: "Finansuje programy szkolne i jest organem ochrony zabytków dla budynku skarbca z 1907 r.",
+        href: "https://www.siauliai.lt",
+      },
+    ],
+    prospectusCta: "Przeczytaj ofertę sprzedaży",
+    statuteCta: "Przeczytaj statut muzeum",
+    dismiss: "Przejdź do strony",
+    barText: "820 podarowanych eksponatów ogłoszono na sprzedaż.",
+    barCta: "Co się dzieje",
+    sourceNote: "Twierdzenia o sprzedaży opierają się na ofercie sprzedaży z 27 lipca 2026 r. na papierze firmowym VšĮ „Telefonijos muziejus“, opublikowanej tutaj w całości. Jako kontakt w sprawach sprzedaży widnieje w niej Lina Zaboras; nie podano, czyją decyzją instytucja jest oferowana, i nie twierdzimy, że podjęła ją jakakolwiek konkretna osoba. Kwota 1 € pochodzi z własnego rocznego sprawozdania finansowego instytucji za 2025 r., złożonego 23 kwietnia 2026 r. pod numerem podmiotu 305196456. To, że eksponaty zostały podarowane, jest relacją ludzi, którzy je oddali. Nie twierdzimy, że naruszono prawo, nie stawiamy żadnych twierdzeń o motywach jakiejkolwiek osoby i sprostujemy wszystko, co okaże się nieprawdziwe.",
+  },
 };
