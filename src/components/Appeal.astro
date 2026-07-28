@@ -92,12 +92,28 @@ const prospectusHref = "/documents/telefonijos-muziejus-pardavimo-pasiulymas-202
   Full-viewport warning layer. The museum site stays visible behind it on
   purpose: what is being shown is exactly what is being sold.
 -->
+{/*
+  `reader-ignore-meta` on this element and on #appeal-notice is load-bearing
+  rather than decorative, and no CSS is attached to it. Safari decides whether
+  to offer Reader — and in Safari 26, Apple Intelligence's Summarize — by
+  hit-testing fixed viewport points and scoring the text beneath them. Because
+  this layer covers the viewport, it is what gets scored instead of the
+  museum's own content, so every page in every locale was being classified as
+  an article. Safari divides its 1800-point threshold by a multiplier that
+  loses 0.75 per ancestor whose id or class matches
+  /[Cc]omment|meta|footer|footnote|talkback/, clamped at 0.2; carrying the
+  token twice floors that multiplier and lifts the threshold to 9000, against
+  a measured worst case of 3377 (lt). Drop either copy and the appeal goes
+  back over the line, with an on-device model offering to paraphrase a text
+  that is deliberately worded to allege nothing. This note is deliberately an
+  Astro comment so it stays in source and out of all 64 built pages.
+*/}
 <div
   id="appeal-overlay"
   role="dialog"
   aria-modal="true"
   aria-labelledby="appeal-heading"
-  class="fixed inset-0 z-[110] overflow-y-auto overscroll-contain bg-black/70 backdrop-blur-[3px]"
+  class="reader-ignore-meta fixed inset-0 z-[110] overflow-y-auto overscroll-contain bg-black/70 backdrop-blur-[3px]"
 >
   <!-- red wash over the site behind -->
   <div class="pointer-events-none fixed inset-0 bg-gradient-to-b from-red-950/50 via-red-950/20 to-red-950/50"></div>
@@ -106,7 +122,7 @@ const prospectusHref = "/documents/telefonijos-muziejus-pardavimo-pasiulymas-202
     <div
       id="appeal-notice"
       tabindex="-1"
-      class="relative w-full max-w-3xl bg-black/85 border-x border-red-600 outline-none"
+      class="reader-ignore-meta relative w-full max-w-3xl bg-black/85 border-x border-red-600 outline-none"
     >
       <div class="appeal-hazard h-3"></div>
 
