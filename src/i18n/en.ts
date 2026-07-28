@@ -398,4 +398,62 @@ export const en: Translation = {
       },
     ],
   },
+
+  appeal: {
+    kicker: "The collection was given. It is now advertised for sale.",
+    heading: "We gave these telephones.",
+    lead: "People who worked at DIDWW brought in their own phones, and their parents’ phones, because they cared about the history of this industry. Neighbours and residents of Šiauliai brought theirs. Over seven years it became a museum — held by a public institution, open to everyone. On 27 July 2026 it was offered to commercial buyers as „unikalią ir privačią eksponatų kolekciją“: a unique and private collection.",
+    facts: [
+      {
+        label: "What is being offered",
+        text: "More than 820 exhibits, together with the institution itself, circulated to commercial buyers — described in the seller’s own document as a private collection.",
+        cite: "Pardavimo pasiūlymas, VšĮ „Telefonijos muziejus“ blankas, 2026-07-27 · published in full below",
+      },
+      {
+        label: "What the owner has put in: one euro",
+        text: "The institution’s filed balance sheet for 2025 records the participants’ capital — everything its owner has contributed to it — as €1. If it were wound up, its owner could recover no more than that.",
+        cite: "Finansinės būklės ataskaita, 2025 m., pateikta Juridinių asmenų registrui 2026-04-23 · Viešųjų įstaigų įstatymas Nr. I-1428, 24 str. 2 d. ir 27 str. 8 d.",
+      },
+    ],
+    journalistTitle: "We are asking journalists to look",
+    journalistCall: "The documents are public and free. The institution’s annual accounts, and the notes that must record anything received as a donation, are published by the Register of Legal Entities under entity code 305196456. We are asking reporters to obtain them and publish what they say — including anything that contradicts us.",
+    moralCore: "We accuse nobody of anything, and we draw no conclusion. We are asking one question. These telephones were given so that a city would have a museum. Before they change hands, the people who gave them are entitled to know what is being sold, and to whom.",
+    demandsTitle: "What we are asking for",
+    demands: [
+      "Publish the notes to the annual accounts, which must record anything the museum received as a donation.",
+      "Say what is actually being sold — the rights to the institution, or the exhibits themselves — and where the money would go.",
+      "Keep the collection together, in Šiauliai, and open to the public.",
+    ],
+    askTitle: "If this institution can no longer keep it",
+    ask: "then the collection should pass to a public museum or to the city — on the same terms it was given.",
+    addressTo: "Write to the bodies that have the power to act:",
+    recipients: [
+      {
+        name: "Ministry of Culture of the Republic of Lithuania",
+        detail: "Monitors the protection and safekeeping of museum values, in museums of any legal form",
+        href: "https://lrkm.lrv.lt",
+      },
+      {
+        name: "Department of Cultural Heritage",
+        detail: "Can enter a threatened object in the Cultural Property Register without the owner’s consent",
+        href: "https://kpd.lrv.lt",
+      },
+      {
+        name: "State Tax Inspectorate (VMI)",
+        detail: "Supervises how charitable support is received and used",
+        href: "https://www.vmi.lt",
+      },
+      {
+        name: "Šiauliai City Municipality",
+        detail: "Funds the school programmes, and is the heritage authority for the 1907 treasury building",
+        href: "https://www.siauliai.lt",
+      },
+    ],
+    prospectusCta: "Read the sale prospectus",
+    statuteCta: "Read the museum’s statute",
+    dismiss: "Continue to the site",
+    barText: "820 donated exhibits are advertised for sale.",
+    barCta: "What is happening",
+    sourceNote: "Statements about the sale come from the prospectus issued on VšĮ „Telefonijos muziejus“ letterhead and dated 27 July 2026, published here in full. It gives Lina Zaboras as the contact for sale enquiries; it does not state on whose decision the institution is offered, and we make no claim that any individual took it. The €1 figure is from the institution’s own 2025 annual accounts, filed 23 April 2026 under entity code 305196456. That the exhibits were donated is the account of the people who gave them. We allege no illegality, we make no claim about anyone’s motives, and we will correct anything shown to be wrong.",
+  },
 };

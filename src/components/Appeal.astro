@@ -1,0 +1,289 @@
+---
+import type { Translation } from "../i18n/types";
+import { en } from "../i18n/en";
+import { defaultLang } from "../i18n/index";
+
+interface Props { t: Translation; }
+const { t } = Astro.props;
+
+// Locales without their own appeal copy fall back to English.
+const a = t.appeal ?? en.appeal!;
+const langPrefix = t.lang === defaultLang ? "" : `/${t.lang}`;
+const prospectusHref = "/documents/telefonijos-muziejus-pardavimo-pasiulymas-2026-07-27.pdf";
+---
+
+<script is:inline>
+  // Runs before the overlay paints so returning visitors never see it flash.
+  (function () {
+    try {
+      if (localStorage.getItem("tm-appeal-dismissed")) {
+        document.documentElement.setAttribute("data-appeal", "dismissed");
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<noscript>
+  <style>
+    /* Without JS the dismiss button cannot work, so let the notice sit
+       inline at the top of the page instead of trapping the visitor. */
+    #appeal-overlay { position: static !important; backdrop-filter: none !important; }
+    #appeal-dismiss { display: none !important; }
+  </style>
+</noscript>
+
+<style is:global>
+  html[data-appeal="dismissed"] #appeal-overlay { display: none; }
+  html:not([data-appeal="dismissed"]) #appeal-bar { display: none; }
+  html[data-appeal="locked"] { overflow: hidden; }
+
+  /* Keep the fixed site header and page content clear of the persistent bar.
+     --appeal-bar-h is measured at runtime and is 0 while the bar is hidden. */
+  #site-header { top: var(--appeal-bar-h, 0px); }
+  body { padding-top: var(--appeal-bar-h, 0px); }
+
+  /* Diagonal hazard banding — the visual language of a warning, not a brand. */
+  .appeal-hazard {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #dc2626 0, #dc2626 11px,
+      #0a0a0a 11px, #0a0a0a 22px
+    );
+  }
+
+  @keyframes appeal-in {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes appeal-glow {
+    0%, 100% { box-shadow: 0 0 0 1px #dc2626, 0 0 60px rgba(220, 38, 38, 0.18); }
+    50% { box-shadow: 0 0 0 1px #ef4444, 0 0 110px rgba(220, 38, 38, 0.42); }
+  }
+  #appeal-notice {
+    animation: appeal-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both,
+               appeal-glow 4.5s ease-in-out 0.45s infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #appeal-notice { animation: appeal-in 0.01s both; }
+    #appeal-pulse, #appeal-bar-pulse { animation: none; }
+  }
+</style>
+
+<!-- Slim persistent bar, shown once the notice has been dismissed -->
+<div id="appeal-bar" class="fixed top-0 inset-x-0 z-[100]">
+  <div class="appeal-hazard h-1"></div>
+  <div class="bg-red-700 border-b border-red-400/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-center gap-3 sm:gap-4 flex-wrap text-center">
+      <span id="appeal-bar-pulse" class="w-2 h-2 rounded-full bg-white animate-pulse shrink-0"></span>
+      <p class="text-xs sm:text-sm font-bold uppercase tracking-wide text-white">{a.barText}</p>
+      <button
+        id="appeal-reopen"
+        type="button"
+        class="text-xs font-black uppercase tracking-widest text-white underline underline-offset-4 decoration-2 hover:text-red-100 transition-colors"
+      >
+        {a.barCta}
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--
+  Full-viewport warning layer. The museum site stays visible behind it on
+  purpose: what is being shown is exactly what is being sold.
+-->
+<div
+  id="appeal-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="appeal-heading"
+  class="fixed inset-0 z-[110] overflow-y-auto overscroll-contain bg-black/70 backdrop-blur-[3px]"
+>
+  <!-- red wash over the site behind -->
+  <div class="pointer-events-none fixed inset-0 bg-gradient-to-b from-red-950/50 via-red-950/20 to-red-950/50"></div>
+
+  <div class="relative min-h-full flex items-start sm:items-center justify-center p-3 sm:p-6 lg:p-10">
+    <div
+      id="appeal-notice"
+      tabindex="-1"
+      class="relative w-full max-w-3xl bg-black/85 border-x border-red-600 outline-none"
+    >
+      <div class="appeal-hazard h-3"></div>
+
+      <div class="p-5 sm:p-9 lg:p-11 space-y-7 sm:space-y-9">
+        <!-- warning label -->
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-red-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+          </svg>
+          <span id="appeal-pulse" class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse shrink-0"></span>
+          <span class="text-[0.6rem] sm:text-xs font-black tracking-[0.25em] uppercase text-red-500">
+            {a.kicker}
+          </span>
+        </div>
+
+        <!-- headline -->
+        <div class="space-y-5">
+          <h2
+            id="appeal-heading"
+            class="text-[2rem] leading-[0.9] sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase text-white"
+          >
+            {a.heading}
+          </h2>
+          <p class="text-base sm:text-lg text-gray-200 leading-relaxed border-l-4 border-red-600 pl-4 sm:pl-5">
+            {a.lead}
+          </p>
+        </div>
+
+        <!-- the record: a stark ruled list, deliberately not a feature grid -->
+        <ol class="border-t border-white/20">
+          {a.facts.map((f, i) => (
+            <li class="border-b border-white/20 py-4 flex gap-4 sm:gap-6">
+              <span class="text-red-500 font-mono text-[0.7rem] font-bold pt-0.5 shrink-0 tabular-nums">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div class="space-y-1.5 min-w-0">
+                <p class="text-[0.65rem] font-black uppercase tracking-[0.15em] text-red-400">{f.label}</p>
+                <p class="text-sm text-gray-300 leading-relaxed">{f.text}</p>
+                <p class="text-[0.65rem] text-gray-600 font-mono leading-relaxed pt-0.5">{f.cite}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <!-- call to the press -->
+        <div class="border-l-4 border-white/70 pl-4 sm:pl-5 space-y-2">
+          <h3 class="text-lg sm:text-xl font-black tracking-tight uppercase text-white">{a.journalistTitle}</h3>
+          <p class="text-sm sm:text-base text-gray-200 leading-relaxed">{a.journalistCall}</p>
+        </div>
+
+        <!-- what was given, and on what terms -->
+        <div class="bg-red-950/40 border border-red-600/50 p-4 sm:p-6">
+          <p class="text-base sm:text-lg text-white leading-relaxed font-medium">{a.moralCore}</p>
+        </div>
+
+        <!-- concrete demands -->
+        <div class="space-y-3">
+          <h3 class="text-lg sm:text-xl font-black tracking-tight uppercase text-white">{a.demandsTitle}</h3>
+          <ul class="space-y-2.5">
+            {a.demands.map((d) => (
+              <li class="flex gap-3 text-sm text-gray-300 leading-relaxed">
+                <span class="text-red-500 font-black shrink-0 select-none">→</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- evidence -->
+        <div class="flex flex-col sm:flex-row gap-2.5">
+          <a
+            href={prospectusHref}
+            target="_blank"
+            rel="noopener"
+            class="flex-1 border border-white/30 hover:border-red-500 hover:bg-red-950/40 px-4 py-3 font-bold flex items-center justify-center gap-2.5 transition-all text-xs sm:text-sm uppercase tracking-wide"
+          >
+            <svg class="w-4 h-4 shrink-0 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            <span>{a.prospectusCta}</span>
+          </a>
+          <a
+            href={`${langPrefix}/statute/`}
+            class="flex-1 border border-white/30 hover:border-red-500 hover:bg-red-950/40 px-4 py-3 font-bold flex items-center justify-center transition-all text-xs sm:text-sm uppercase tracking-wide text-center"
+          >
+            {a.statuteCta}
+          </a>
+        </div>
+
+        <!-- the ask -->
+        <div class="space-y-3 pt-1">
+          <h3 class="text-xl sm:text-2xl font-black tracking-tight uppercase text-white">{a.askTitle}</h3>
+          <p class="text-sm sm:text-base text-gray-300 leading-relaxed">{a.ask}</p>
+        </div>
+
+        <!-- who to write to -->
+        <div class="space-y-2.5">
+          <p class="text-xs font-bold uppercase tracking-widest text-red-400">{a.addressTo}</p>
+          <ul class="space-y-px">
+            {a.recipients.map((r) => (
+              <li>
+                <a
+                  href={r.href}
+                  target="_blank"
+                  rel="noopener"
+                  class="flex items-center justify-between gap-4 bg-white/[0.03] hover:bg-red-950/40 border-l-2 border-transparent hover:border-red-500 px-4 py-3 transition-all group"
+                >
+                  <span class="min-w-0">
+                    <span class="block text-sm font-bold text-white">{r.name}</span>
+                    <span class="block text-xs text-gray-500 mt-0.5">{r.detail}</span>
+                  </span>
+                  <svg class="w-4 h-4 text-gray-600 group-hover:text-red-500 shrink-0 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- sources + dismiss -->
+        <div class="pt-5 border-t border-white/15 space-y-4">
+          <p class="text-[0.7rem] leading-relaxed text-gray-600">{a.sourceNote}</p>
+          <button
+            id="appeal-dismiss"
+            type="button"
+            class="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-gray-600 hover:text-gray-300 transition-colors py-1"
+          >
+            {a.dismiss} →
+          </button>
+        </div>
+      </div>
+
+      <div class="appeal-hazard h-3"></div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var root = document.documentElement;
+    var KEY = "tm-appeal-dismissed";
+    var notice = document.getElementById("appeal-notice");
+
+    // The bar wraps on narrow screens, so measure rather than hard-code.
+    function syncBarHeight() {
+      var bar = document.getElementById("appeal-bar");
+      var shown = root.getAttribute("data-appeal") === "dismissed";
+      root.style.setProperty(
+        "--appeal-bar-h",
+        (shown && bar ? bar.offsetHeight : 0) + "px"
+      );
+    }
+    function lock() {
+      if (root.getAttribute("data-appeal") !== "dismissed") {
+        root.setAttribute("data-appeal", "locked");
+      }
+      syncBarHeight();
+    }
+    function open() {
+      root.setAttribute("data-appeal", "locked");
+      syncBarHeight();
+      if (notice) notice.focus({ preventScroll: true });
+    }
+    function dismiss() {
+      try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+      root.setAttribute("data-appeal", "dismissed");
+      syncBarHeight();
+    }
+
+    lock();
+    if (notice && root.getAttribute("data-appeal") === "locked") {
+      notice.focus({ preventScroll: true });
+    }
+
+    var d = document.getElementById("appeal-dismiss");
+    if (d) d.addEventListener("click", dismiss);
+
+    var r = document.getElementById("appeal-reopen");
+    if (r) r.addEventListener("click", open);
+
+    window.addEventListener("resize", syncBarHeight);
+  })();
+</script>

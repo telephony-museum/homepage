@@ -398,4 +398,62 @@ export const lt: Translation = {
       },
     ],
   },
+
+  appeal: {
+    kicker: "Kolekcija buvo padovanota. Dabar ji skelbiama parduodama.",
+    heading: "Šiuos telefonus padovanojome mes.",
+    lead: "DIDWW dirbę žmonės atnešė savo telefonus ir savo tėvų telefonus, nes jiems rūpėjo šios srities istorija. Kaimynai ir Šiaulių gyventojai atnešė savuosius. Per septynerius metus taip atsirado muziejus — laikomas viešosios įstaigos, atviras visiems. 2026 m. liepos 27 d. jis pasiūlytas komerciniams pirkėjams kaip „unikali ir privati eksponatų kolekcija“.",
+    facts: [
+      {
+        label: "Kas siūloma parduoti",
+        text: "Daugiau kaip 820 eksponatų kartu su pačia įstaiga, išplatinta komerciniams pirkėjams — paties pardavėjo dokumente vadinama privačia kolekcija.",
+        cite: "Pardavimo pasiūlymas, VšĮ „Telefonijos muziejus“ blankas, 2026-07-27 · paskelbtas žemiau visa apimtimi",
+      },
+      {
+        label: "Kiek savininkas yra įnešęs: vienas euras",
+        text: "Įstaigos pateiktame 2025 m. balanse dalininkų kapitalas — visa, ką savininkas yra į ją įnešęs — nurodytas kaip 1 €. Likviduojant įstaigą savininkas negalėtų atgauti daugiau.",
+        cite: "Finansinės būklės ataskaita, 2025 m., pateikta Juridinių asmenų registrui 2026-04-23 · Viešųjų įstaigų įstatymas Nr. I-1428, 24 str. 2 d. ir 27 str. 8 d.",
+      },
+    ],
+    journalistTitle: "Prašome žurnalistų pasidomėti",
+    journalistCall: "Dokumentai yra vieši ir nemokami. Įstaigos metinės ataskaitos ir aiškinamasis raštas, kuriame turi būti užfiksuota viskas, kas gauta kaip parama, skelbiami Juridinių asmenų registro tvarkytojo pagal juridinio asmens kodą 305196456. Prašome žurnalistų juos gauti ir paskelbti, kas juose parašyta — įskaitant tai, kas prieštarautų mums.",
+    moralCore: "Mes nieko nekaltiname ir nedarome jokių išvadų. Mes keliame vieną klausimą. Šie telefonai buvo atiduoti tam, kad miestas turėtų muziejų. Prieš jiems pereinant kitoms rankoms, juos atidavę žmonės turi teisę žinoti, kas parduodama ir kam.",
+    demandsTitle: "Ko mes prašome",
+    demands: [
+      "Paskelbti metinių ataskaitų aiškinamuosius raštus, kuriuose turi būti užfiksuota viskas, ką muziejus gavo kaip paramą.",
+      "Nurodyti, kas iš tikrųjų parduodama — teisės į įstaigą ar patys eksponatai — ir kur atitektų pinigai.",
+      "Išsaugoti kolekciją vientisą, Šiauliuose ir atvirą visuomenei.",
+    ],
+    askTitle: "Jei ši įstaiga nebegali jos išlaikyti",
+    ask: "tuomet kolekcija turėtų atitekti viešajam muziejui ar miestui — tomis pačiomis sąlygomis, kuriomis buvo padovanota.",
+    addressTo: "Kreipkitės į institucijas, turinčias galią veikti:",
+    recipients: [
+      {
+        name: "Lietuvos Respublikos kultūros ministerija",
+        detail: "Stebi muziejinių vertybių apsaugą ir saugojimą bet kokios teisinės formos muziejuose",
+        href: "https://lrkm.lrv.lt",
+      },
+      {
+        name: "Kultūros paveldo departamentas",
+        detail: "Gali įrašyti objektą, kuriam gresia praradimas, į Kultūros vertybių registrą be savininko sutikimo",
+        href: "https://kpd.lrv.lt",
+      },
+      {
+        name: "Valstybinė mokesčių inspekcija",
+        detail: "Prižiūri, kaip parama gaunama ir naudojama",
+        href: "https://www.vmi.lt",
+      },
+      {
+        name: "Šiaulių miesto savivaldybė",
+        detail: "Finansuoja mokyklų programas ir yra 1907 m. iždinės pastato paveldo institucija",
+        href: "https://www.siauliai.lt",
+      },
+    ],
+    prospectusCta: "Skaityti pardavimo pasiūlymą",
+    statuteCta: "Skaityti muziejaus įstatus",
+    dismiss: "Tęsti į svetainę",
+    barText: "Parduodami 820 padovanotų eksponatų.",
+    barCta: "Kas vyksta",
+    sourceNote: "Teiginiai apie pardavimą remiasi 2026 m. liepos 27 d. pardavimo pasiūlymu VšĮ „Telefonijos muziejus“ blanke, paskelbtu čia visa apimtimi. Jame kontaktiniu asmeniu dėl pardavimo nurodyta Lina Zaboras; jame nenurodyta, kieno sprendimu įstaiga siūloma, ir mes neteigiame, kad tokį sprendimą priėmė koks nors konkretus asmuo. 1 € rodiklis paimtas iš pačios įstaigos 2025 m. metinių ataskaitų, pateiktų 2026 m. balandžio 23 d., juridinio asmens kodas 305196456. Tai, kad eksponatai buvo padovanoti, yra juos atidavusių žmonių liudijimas. Neteigiame, kad pažeistas įstatymas, nekeliame teiginių apie jokio asmens motyvus ir ištaisysime viską, kas pasirodys esą klaidinga.",
+  },
 };

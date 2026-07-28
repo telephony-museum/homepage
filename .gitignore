@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# internal legal research — not for a public repo
+legal.md
+legal-appendix.md
