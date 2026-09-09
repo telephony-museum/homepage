@@ -2,7 +2,6 @@
 import type { Translation } from "../i18n/types";
 import { siteConfig } from "../data/site";
 import { langCodes, defaultLang } from "../i18n/index";
-import Appeal from "../components/Appeal.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -156,7 +155,6 @@ const alternateLocales = Object.entries(ogLocaleMap)
     })} />
   </head>
   <body class="min-h-screen bg-dark-bg text-gray-100 font-sans antialiased">
-    <Appeal t={t} />
     <slot />
   </body>
 </html>

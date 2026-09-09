@@ -155,30 +155,4 @@ export interface Translation {
       articles: string[];
     }[];
   };
-
-  // Public appeal regarding the announced sale of the museum.
-  // Required: every locale carries its own copy, so nothing silently falls
-  // back to English inside a page declaring another lang.
-  appeal: {
-    kicker: string;
-    heading: string;
-    lead: string;
-    /** The documentary record. Each item must carry a citation — nothing unsourced. */
-    facts: { label: string; text: string; cite: string }[];
-    journalistTitle: string;
-    journalistCall: string;
-    moralCore: string;
-    demandsTitle: string;
-    demands: string[];
-    askTitle: string;
-    ask: string;
-    addressTo: string;
-    recipients: { name: string; detail: string; href: string }[];
-    prospectusCta: string;
-    statuteCta: string;
-    dismiss: string;
-    barText: string;
-    barCta: string;
-    sourceNote: string;
-  };
 }
